@@ -101,8 +101,8 @@ $students = array(
    <?php foreach ($students as $row): array_map('htmlentities', $row); 
   array_map('htmlentities', $row); 
    
-   $val = in_array('php', array_column('status',$row),true);
-   print_r($val);
+  $val = in_array('php', array_column('status', $row));
+    print_r($val);;
    
     if($val === 'php'){
       $tr = 'red';
