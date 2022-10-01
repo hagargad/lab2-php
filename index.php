@@ -99,14 +99,17 @@ $students = array(
      </thead>
      <tbody>
    <?php foreach ($students as $row): array_map('htmlentities', $row); 
-   $color=array_search('php', $students, true);
-   $tr = 0;
-   if($color == 'php'){
-      $tr = #f2f2f2;
+  array_map('htmlentities', $row); 
+   
+   $val = in_array('php', array_column('status',$row),true);
+   print_r($val);
+   
+    if($val === 'php'){
+      $tr = 'red';
    }
    else{
-      $tr = #fff;
-   }  
+      $tr = '#fff';
+   } 
    ?>
        <tr style=" background-color:<?php $tr ?>">
          <td><?php echo implode('</td><td>', $row); ?></td>
